@@ -9,19 +9,19 @@ public class Example
 
     public static void main(String[] args)
     {
-        float[] singleThead = performSingleThead();
+        float[] singleThread = performSingleThread();
         float[] doubleThread = performDoubleThread();
-        float[] multiThread = performMultiThead(60);
+        float[] multiThread = performMultiThread(8);
 
-        System.out.println(Arrays.equals(singleThead, doubleThread));
-        System.out.println(Arrays.equals(singleThead, multiThread));
+        System.out.println(Arrays.equals(singleThread, doubleThread));
+        System.out.println(Arrays.equals(singleThread, multiThread));
 
-        System.out.println(singleThead[SIZE - 1]);
+        System.out.println(singleThread[SIZE - 1]);
         System.out.println(doubleThread[SIZE - 1]);
         System.out.println(multiThread[SIZE - 1]);
     }
 
-    private static float[] performMultiThead(int threadCount)
+    private static float[] performMultiThread(int threadCount)
     {
         int size = SIZE;
         float[] array = new float[size];
@@ -128,7 +128,7 @@ public class Example
         return array;
     }
 
-    private static float[] performSingleThead()
+    private static float[] performSingleThread()
     {
         float[] array = new float[SIZE];
         Arrays.fill(array, 1);
